@@ -1,0 +1,176 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ff9800, #e53935, #ffeb3b);
+}
+
+/* Form Container */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 340px;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Input Field */
+input {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button */
+button {
+    padding: 14px;
+    font-size: 16px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e65100;
+}
+
+/* Loading and Popup Screens */
+.loading-screen, .popup-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content p {
+    font-size: 18px;
+}
+
+.popup-content p span {
+    color: green;
+    font-weight: bold;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+    text-align: center; /* Center the error message */
+    width: 100%; /* Ensure it spans the full width */
+}
+
+/* Invalid Input Styling */
+.input-error {
+    border-color: red !important; /* Red border for invalid input */
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    flex-direction: column; /* Stack input and error message vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Logo Styling */
+/* .logo {
+    width: 100px; 
+    max-width: 50%;
+    display: block;
+    margin: 10px auto;
+} */
+
+.logo {
+    width: 140px;       /* ukuran lebih besar */
+    height: auto;       /* jaga proporsi */
+    max-width: 60%;     /* supaya tidak terlalu besar di layar kecil */
+    display: block;
+    margin: 15px auto;  /* jarak atas-bawah */
+}
+
+/* Loading Screen Enhancements */
+.loading-content {
+    text-align: center;
+}
+
+/* Glowing Logo Animation */
+.loading-logo {
+    width: 140px;
+    animation: glow 1.5s ease-in-out infinite, fadeIn 1.5s ease-in-out;
+    filter: drop-shadow(0px 0px 10px rgba(255, 165, 0, 0.7));
+}
+
+/* Text Animation */
+#loading-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Fade Effects */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% { filter: drop-shadow(0px 0px 5px rgba(255, 165, 0, 0.5)); }
+    100% { filter: drop-shadow(0px 0px 20px rgba(255, 165, 0, 1)); }
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Pulse Effect */
+@keyframes pulse {
+    0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+}

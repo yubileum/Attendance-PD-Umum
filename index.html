@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDKK St.Yakobus Attendance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="LOGO PD_fixed.png">
+</head>
+<body>
+
+    <div class="container">
+        <img src="LOGO PD_fixed.png" alt="PDOMPKK St.Yakobus Logo" class="logo"> <!-- Logo in page -->
+        <h2>PDKK St.Yakobus Attendance</h2>
+        <p>Enter your phone number to check in</p>
+        <div class="input-container">
+            <input type="tel" id="phoneNumber" placeholder="Enter phone number">
+            <div id="phoneError" class="error-message"></div>
+        </div>
+        <button onclick="checkIn()">Check In</button>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loading-content">
+            <img src="LOGO PD_fixed.png" alt="Loading Logo" class="loading-logo">
+            <p id="loading-text">Checking...</p>
+        </div>
+    </div>
+
+    <!-- Popup Message -->
+    <div class="popup-screen" id="popup">
+        <div class="popup-content">
+            <p id="message"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function validatePhoneNumber(input) {
+            input.value = input.value.replace(/\D/g, '');
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
