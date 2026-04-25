@@ -14,7 +14,7 @@
         <h2>PDKK St.Yakobus Attendance</h2>
         <p>Enter your phone number to check in</p>
         <div class="input-container">
-            <input type="tel" id="phoneNumber" placeholder="Enter phone number">
+            <input type="tel" id="phoneNumber" placeholder="Enter phone number" oninput="validatePhoneNumber(this)">
             <div id="phoneError" class="error-message"></div>
         </div>
         <button onclick="checkIn()">Check In</button>
