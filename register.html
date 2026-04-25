@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - PDKK St.Yakobus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="LOGO PD_fixed.png">
+    <style>
+        .register-container {
+            width: 90%;
+            max-width: 400px;
+            text-align: left;
+            margin: 20px auto;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            background-color: white;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff9800;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ff9800;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container register-container">
+        <img src="LOGO PD_fixed.png" alt="PDOMPKK St.Yakobus Logo" class="logo">
+        <h2>Registration Form</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="namaLengkap">Nama Lengkap</label>
+                <input type="text" id="namaLengkap" required placeholder="Masukkan Nama Lengkap">
+            </div>
+
+            <div class="form-group">
+                <label for="namaPanggilan">Nama Panggilan</label>
+                <input type="text" id="namaPanggilan" required placeholder="Masukkan Nama Panggilan">
+            </div>
+
+            <div class="form-group">
+                <label for="jenisKelamin">Jenis Kelamin</label>
+                <select id="jenisKelamin" required>
+                    <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="domisili">Domisili Tempat Tinggal</label>
+                <input type="text" id="domisili" required placeholder="Contoh: Kelapa Gading">
+            </div>
+
+            <div class="form-group">
+                <label for="paroki">Paroki/Lingkungan/Wilayah</label>
+                <input type="text" id="paroki" required placeholder="Contoh: St. Yakobus / Yohanes">
+            </div>
+
+            <div class="form-group">
+                <label for="noHp">No HP (Whatsapp)</label>
+                <input type="tel" id="noHp" required placeholder="Contoh: 08123456789" oninput="this.value = this.value.replace(/\\D/g, '')">
+            </div>
+
+            <div class="form-group">
+                <label for="tanggalLahir">Tanggal Lahir</label>
+                <input type="date" id="tanggalLahir" required>
+            </div>
+
+            <div class="form-group">
+                <label for="statusKeanggotaan">Status Keanggotaan</label>
+                <select id="statusKeanggotaan" required>
+                    <option value="" disabled selected>Pilih Status</option>
+                    <option value="Tim">Tim</option>
+                    <option value="Pengurus">Pengurus</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submitBtn">Submit Registration</button>
+        </form>
+        <a href="index.html" class="back-link">Kembali ke Check-in</a>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loading-content">
+            <img src="LOGO PD_fixed.png" alt="Loading Logo" class="loading-logo">
+            <p id="loading-text">Submitting...</p>
+        </div>
+    </div>
+
+    <!-- Popup Message -->
+    <div class="popup-screen" id="popup">
+        <div class="popup-content">
+            <p id="message"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+
+</body>
+</html>

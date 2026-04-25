@@ -54,7 +54,7 @@ function checkIn() {
                 localStorage.setItem(phoneNumber, Date.now()); // Store the current time
             } else {
                 document.getElementById("message").innerHTML = `Nomor HP belum terdaftar, registrasi dulu di <br> 
-                <a href="https://bit.ly/umatbaruPDYakob" target="_blank">bit.ly/umatbaruPDYakob</a>`;
+                <a href="register.html?phone=${encodeURIComponent(phoneNumber)}" style="color: #ff9800; font-weight: bold; text-decoration: none;">Halaman Registrasi</a>`;
             }
             document.getElementById("popup").style.display = "flex";
 
