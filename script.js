@@ -1,5 +1,10 @@
+// Normalize phone: remove non-digits, then strip leading zeros
+function normalizePhone(number) {
+    return String(number).replace(/\D/g, '').replace(/^0+/, '');
+}
+
 function checkIn() {
-    const phoneNumber = document.getElementById("phoneNumber").value.trim();
+    const rawPhone = document.getElementById("phoneNumber").value.trim();
     const phoneError = document.getElementById("phoneError");
     const phoneInput = document.getElementById("phoneNumber");
     const checkInButton = document.querySelector("button");
@@ -8,15 +13,19 @@ function checkIn() {
     phoneError.style.display = "none";
     phoneInput.classList.remove("input-error");
 
-    // Validate phone number
-    if (!phoneNumber || phoneNumber.length < 10 || phoneNumber.length > 15) {
+    // Validate phone number (check raw digits length, allowing for leading 0)
+    const digitsOnly = rawPhone.replace(/\D/g, '');
+    if (!digitsOnly || digitsOnly.length < 9 || digitsOnly.length > 15) {
         phoneError.textContent = "Wrong Phone Number Format"; // Set error message
         phoneError.style.display = "block"; // Show error message
         phoneInput.classList.add("input-error"); // Add red border
         return; // Stop further execution
     }
 
-    // Check if the user has already checked in within the last 24 hours
+    // Normalize: strip leading zeros before sending to server
+    const phoneNumber = normalizePhone(rawPhone);
+
+    // Check if the user has already checked in within the last 24 hours (use normalized key)
     const storedTime = localStorage.getItem(phoneNumber);
     if (storedTime) {
         const timeDifference = Date.now() - storedTime;
