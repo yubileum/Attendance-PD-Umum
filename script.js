@@ -63,7 +63,7 @@ function checkIn() {
                 localStorage.setItem(phoneNumber, Date.now()); // Store the current time
             } else if (data.alreadyCheckedIn) {
                 // Server found this number in "Absensi Tim Pengurus" for today
-                document.getElementById("message").innerHTML = `This Account is already registered`;
+                document.getElementById("message").innerHTML = `This Account is already checked-in`;
                 document.getElementById("phoneNumber").value = "";
                 localStorage.setItem(phoneNumber, Date.now());
             } else {
