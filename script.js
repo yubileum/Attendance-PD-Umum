@@ -61,6 +61,11 @@ function checkIn() {
 
                 // Save the phone number and current timestamp in localStorage
                 localStorage.setItem(phoneNumber, Date.now()); // Store the current time
+            } else if (data.alreadyCheckedIn) {
+                // Server found this number in "Absensi Tim Pengurus" for today
+                document.getElementById("message").innerHTML = `This Account is already registered`;
+                document.getElementById("phoneNumber").value = "";
+                localStorage.setItem(phoneNumber, Date.now());
             } else {
                 document.getElementById("message").innerHTML = `Nomor HP belum terdaftar, registrasi dulu di <br> 
                 <a href="register.html?phone=${encodeURIComponent(phoneNumber)}" style="color: #ff9800; font-weight: bold; text-decoration: none;">Halaman Registrasi</a>`;
